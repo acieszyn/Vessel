@@ -1,36 +1,61 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Vessel">
+      <UniqueIdentifier>{F75BDFD7-E3FD-09AE-CCB8-1D02B8F990FE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Vessel\Events">
+      <UniqueIdentifier>{FB0BA58C-67CC-20C3-3007-6A409C86659F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{ad71c2d6-da24-4546-a848-a85987864a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{66b10e6f-2b95-46a5-9bc3-af42d928746e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Vessel\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Vessel.h" />
     <ClInclude Include="src\Vessel\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Vessel</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Vessel\Core.h">
+      <Filter>Vessel</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Vessel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Events\ApplicationEvent.h">
+      <Filter>Vessel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Events\Event.h">
+      <Filter>Vessel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Events\KeyEvent.h">
+      <Filter>Vessel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Events\MouseEvent.h">
+      <Filter>Vessel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Log.h">
+      <Filter>Vessel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vsslpch.h" />
+    <ClInclude Include="src\Vessel\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Vessel\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Vessel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Log.cpp">
+      <Filter>Vessel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vsslpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

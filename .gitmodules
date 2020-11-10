@@ -1,0 +1,6 @@
+[submodule "Vessel/vendor/spdlog"]
+	path = Vessel/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Vessel/vendor/GLFW"]
+	path = Vessel/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
