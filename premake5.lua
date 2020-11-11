@@ -15,8 +15,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Vessel/vendor/GLFW/include"
+IncludeDir["Glad"] = "Vessel/vendor/Glad/include"
+IncludeDir["ImGui"] = "Vessel/vendor/imgui"
 
 include "Vessel/vendor/GLFW"
+include "Vessel/vendor/Glad"
+include "Vessel/vendor/imgui"
 
 project "Vessel"
 	location "Vessel"
@@ -39,12 +43,16 @@ project "Vessel"
 	{
 		"%{prj.name}/src/",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -56,7 +64,8 @@ project "Vessel"
 		defines
 		{
 			"VSSL_PLATFORM_WINDOWS",
-			"VSSL_BUILD_DLL"
+			"VSSL_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -66,14 +75,17 @@ project "Vessel"
 
 	filter "configurations:Debug"
 		defines "VSSL_DEBUG"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "VSSL_RELEASE"
+		buildoptions "/MD"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "VSSL_DIST"
+		buildoptions "/MD"
 		optimize "on"
 
 project "Sandbox"
@@ -113,12 +125,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "VSSL_DEBUG"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "VSSL_RELEASE"
+		buildoptions "/MD"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "VSSL_DIST"
+		buildoptions "/MD"
 		optimize "on"
