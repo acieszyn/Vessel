@@ -10,12 +10,13 @@ public:
 
 	void OnUpdate() override
 	{
-		VSSL_INFO("ExampleLayer::Update");
+		if (Vessel::Input::IsKeyPressed(VSSL_KEY_TAB))
+			VSSL_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Vessel::Event& event) override
 	{
-		VSSL_TRACE("{0}", event);
+		// VSSL_TRACE("{0}", event);
 	}
 };
 

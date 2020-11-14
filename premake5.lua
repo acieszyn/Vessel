@@ -2,6 +2,7 @@
 
 workspace "Vessel"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations 
 	{
@@ -18,14 +19,17 @@ IncludeDir["GLFW"] = "Vessel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Vessel/vendor/Glad/include"
 IncludeDir["ImGui"] = "Vessel/vendor/imgui"
 
-include "Vessel/vendor/GLFW"
-include "Vessel/vendor/Glad"
-include "Vessel/vendor/imgui"
+group "Dependencies"
+	include "Vessel/vendor/GLFW"
+	include "Vessel/vendor/Glad"
+	include "Vessel/vendor/imgui"
+group ""
 
 project "Vessel"
 	location "Vessel"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -58,7 +62,6 @@ project "Vessel"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -70,28 +73,29 @@ project "Vessel"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "VSSL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "VSSL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "VSSL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -115,7 +119,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -125,15 +128,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "VSSL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "VSSL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "VSSL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
