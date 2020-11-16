@@ -1,10 +1,14 @@
 #pragma once
 
 #ifdef VSSL_PLATFORM_WINDOWS
+#if VSSL_DYNAMIC_LINK
 #ifdef VSSL_BUILD_DLL
 #define VESSEL_API __declspec(dllexport)
 #else
 #define VESSEL_API __declspec(dllimport)
+#endif
+#else
+#define VESSEL_API
 #endif
 #else
 #error Vessel only supports Windows!

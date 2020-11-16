@@ -7,6 +7,8 @@
 #include "Vessel/Events/Event.h"
 #include "Vessel/Events/ApplicationEvent.h"
 
+#include "Vessel/ImGui/ImGuiLayer.h"
+
 namespace Vessel {
 
 	class VESSEL_API Application
@@ -29,6 +31,7 @@ namespace Vessel {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
