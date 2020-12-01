@@ -9,6 +9,12 @@
 
 #include "Vessel/ImGui/ImGuiLayer.h"
 
+#include "Vessel/Renderer/Shader.h"
+#include "Vessel/Renderer/Buffer.h"
+#include "Vessel/Renderer/VertexArray.h"
+
+#include "Vessel/Renderer/OrthographicCamera.h"
+
 namespace Vessel {
 
 	class VESSEL_API Application
@@ -34,6 +40,14 @@ namespace Vessel {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
