@@ -19,6 +19,7 @@ IncludeDir["GLFW"] = "Vessel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Vessel/vendor/Glad/include"
 IncludeDir["ImGui"] = "Vessel/vendor/imgui"
 IncludeDir["glm"] = "Vessel/vendor/glm"
+IncludeDir["stb_image"] = "Vessel/vendor/stb_image"
 
 group "Dependencies"
 	include "Vessel/vendor/GLFW"
@@ -43,6 +44,8 @@ project "Vessel"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -59,7 +62,8 @@ project "Vessel"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

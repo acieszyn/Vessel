@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef VSSL_PLATFORM_WINDOWS
 #if VSSL_DYNAMIC_LINK
 #ifdef VSSL_BUILD_DLL
@@ -29,3 +31,13 @@
 #define BIT(x) (1 << x)
 
 #define VSSL_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+namespace Vessel {
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+
+}

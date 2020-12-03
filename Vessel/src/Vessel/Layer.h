@@ -2,6 +2,7 @@
 
 #include "Vessel/Core.h"
 #include "Vessel/Events/Event.h"
+#include "Vessel/Core/Timestep.h"
 
 namespace Vessel {
 
@@ -13,7 +14,7 @@ namespace Vessel {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
