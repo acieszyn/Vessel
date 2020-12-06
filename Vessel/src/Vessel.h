@@ -9,6 +9,7 @@
 #include "Vessel/Input.h"
 #include "Vessel/KeyCodes.h"
 #include "Vessel/MouseButtonCodes.h"
+#include "Vessel/OrthographicCameraController.h"
 
 #include "Vessel/ImGui/ImGuiLayer.h"
 
@@ -21,7 +22,6 @@
 #include "Vessel/Renderer/VertexArray.h"
 
 #include "Vessel/Renderer/OrthographicCamera.h"
-
 // ---Entry point------------------
 #include "Vessel/EntryPoint.h"
 // --------------------------------

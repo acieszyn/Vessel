@@ -164,6 +164,7 @@
     <ClInclude Include="src\Vessel\LayerStack.h" />
     <ClInclude Include="src\Vessel\Log.h" />
     <ClInclude Include="src\Vessel\MouseButtonCodes.h" />
+    <ClInclude Include="src\Vessel\OrthographicCameraController.h" />
     <ClInclude Include="src\Vessel\Renderer\Buffer.h" />
     <ClInclude Include="src\Vessel\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Vessel\Renderer\OrthographicCamera.h" />
@@ -600,6 +601,7 @@
     <ClCompile Include="src\Vessel\Layer.cpp" />
     <ClCompile Include="src\Vessel\LayerStack.cpp" />
     <ClCompile Include="src\Vessel\Log.cpp" />
+    <ClCompile Include="src\Vessel\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Vessel\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Vessel\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Vessel\Renderer\RenderCommand.cpp" />
