@@ -3,7 +3,7 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "Vessel/LayerStack.h"
+#include "Vessel/Core/LayerStack.h"
 #include "Vessel/Events/Event.h"
 #include "Vessel/Events/ApplicationEvent.h"
 

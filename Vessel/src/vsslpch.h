@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Vessel/Log.h"
+#include "Vessel/Core/Log.h"
 
 #ifdef VSSL_PLATFORM_WINDOWS
 #include <Windows.h>

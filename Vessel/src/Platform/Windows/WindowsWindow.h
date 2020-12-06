@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vessel/Window.h"
+#include "Vessel/Core/Window.h"
 #include "Vessel/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

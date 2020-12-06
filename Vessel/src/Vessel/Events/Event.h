@@ -1,7 +1,7 @@
 #pragma once
 
 #include "vsslpch.h"
-#include "Vessel/Core.h"
+#include "Vessel/Core/Core.h"
 
 namespace Vessel {
 

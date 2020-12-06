@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Vessel/Core.h"
+#include "Vessel/Core/Core.h"
 
 namespace Vessel {
 

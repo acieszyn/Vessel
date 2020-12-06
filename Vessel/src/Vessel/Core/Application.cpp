@@ -1,7 +1,7 @@
 #include "vsslpch.h"
 #include "Application.h"
 
-#include "Vessel/Log.h"
+#include "Vessel/Core/Log.h"
 
 #include "Vessel/Renderer/Renderer.h"
 

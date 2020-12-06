@@ -1,7 +1,7 @@
 #include "vsslpch.h"
 #include "WindowsInput.h"
 
-#include "Vessel/Application.h"
+#include "Vessel/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 

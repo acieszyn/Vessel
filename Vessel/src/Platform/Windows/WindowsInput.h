@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vessel/Input.h"
+#include "Vessel/Core/Input.h"
 
 namespace Vessel {
 

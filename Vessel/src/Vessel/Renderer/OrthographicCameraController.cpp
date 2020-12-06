@@ -1,8 +1,8 @@
 #include "vsslpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Vessel/Input.h"
-#include "Vessel/KeyCodes.h"
+#include "Vessel/Core/Input.h"
+#include "Vessel/Core/KeyCodes.h"
 
 namespace Vessel {
 

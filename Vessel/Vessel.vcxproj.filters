@@ -81,17 +81,38 @@
     <ClInclude Include="src\Vessel.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\Application.h">
-      <Filter>src\Vessel</Filter>
+    <ClInclude Include="src\Vessel\Core\Application.h">
+      <Filter>src\Vessel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\Core.h">
-      <Filter>src\Vessel</Filter>
+    <ClInclude Include="src\Vessel\Core\Core.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\EntryPoint.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\Input.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\KeyCodes.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\Layer.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\LayerStack.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\Log.h">
+      <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Core\MouseButtonCodes.h">
+      <Filter>src\Vessel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Core\Timestep.h">
       <Filter>src\Vessel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\EntryPoint.h">
-      <Filter>src\Vessel</Filter>
+    <ClInclude Include="src\Vessel\Core\Window.h">
+      <Filter>src\Vessel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Events\ApplicationEvent.h">
       <Filter>src\Vessel\Events</Filter>
@@ -108,24 +129,6 @@
     <ClInclude Include="src\Vessel\ImGui\ImGuiLayer.h">
       <Filter>src\Vessel\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\Input.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\KeyCodes.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\Layer.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\LayerStack.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\Log.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\MouseButtonCodes.h">
-      <Filter>src\Vessel</Filter>
-    </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\Buffer.h">
       <Filter>src\Vessel\Renderer</Filter>
     </ClInclude>
@@ -133,6 +136,9 @@
       <Filter>src\Vessel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\OrthographicCamera.h">
+      <Filter>src\Vessel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Renderer\OrthographicCameraController.h">
       <Filter>src\Vessel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\RenderCommand.h">
@@ -152,9 +158,6 @@
     </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\VertexArray.h">
       <Filter>src\Vessel\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vessel\Window.h">
-      <Filter>src\Vessel</Filter>
     </ClInclude>
     <ClInclude Include="src\vsslpch.h">
       <Filter>src</Filter>
@@ -1386,7 +1389,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1413,8 +1415,17 @@
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vessel\Application.cpp">
-      <Filter>src\Vessel</Filter>
+    <ClCompile Include="src\Vessel\Core\Application.cpp">
+      <Filter>src\Vessel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Core\Layer.cpp">
+      <Filter>src\Vessel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Core\LayerStack.cpp">
+      <Filter>src\Vessel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Core\Log.cpp">
+      <Filter>src\Vessel\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Vessel\ImGui\ImGuiBuild.cpp">
       <Filter>src\Vessel\ImGui</Filter>
@@ -1422,19 +1433,13 @@
     <ClCompile Include="src\Vessel\ImGui\ImGuiLayer.cpp">
       <Filter>src\Vessel\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vessel\Layer.cpp">
-      <Filter>src\Vessel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Vessel\LayerStack.cpp">
-      <Filter>src\Vessel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Vessel\Log.cpp">
-      <Filter>src\Vessel</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vessel\Renderer\Buffer.cpp">
       <Filter>src\Vessel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Vessel\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Vessel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Renderer\OrthographicCameraController.cpp">
       <Filter>src\Vessel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Vessel\Renderer\RenderCommand.cpp">
@@ -1461,6 +1466,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vessel\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

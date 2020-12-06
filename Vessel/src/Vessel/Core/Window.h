@@ -2,7 +2,7 @@
 
 #include "vsslpch.h"
 
-#include "Vessel/Core.h"
+#include "Vessel/Core/Core.h"
 #include "Vessel/Events/Event.h"
 
 namespace Vessel {
