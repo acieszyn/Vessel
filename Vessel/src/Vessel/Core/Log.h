@@ -24,11 +24,11 @@ namespace Vessel {
 #define VSSL_CORE_INFO(...)		::Vessel::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define VSSL_CORE_WARN(...)		::Vessel::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define VSSL_CORE_ERROR(...)	::Vessel::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define VSSL_CORE_FATAL(...)	::Vessel::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define VSSL_CORE_CRITICAL(...)	::Vessel::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
 #define VSSL_TRACE(...)			::Vessel::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define VSSL_INFO(...)			::Vessel::Log::GetClientLogger()->info(__VA_ARGS__)
 #define VSSL_WARN(...)			::Vessel::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define VSSL_ERROR(...)			::Vessel::Log::GetClientLogger()->error(__VA_ARGS__)
-#define VSSL_FATAL(...)			::Vessel::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define VSSL_CRITICAL(...)		::Vessel::Log::GetClientLogger()->critical(__VA_ARGS__)
