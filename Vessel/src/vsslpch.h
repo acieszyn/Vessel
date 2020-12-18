@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "Vessel/Core/Log.h"
+#include "Vessel/Debug/Instrumentor.h"
 
 #ifdef VSSL_PLATFORM_WINDOWS
 #include <Windows.h>

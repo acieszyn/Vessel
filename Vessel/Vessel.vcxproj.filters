@@ -19,6 +19,9 @@
     <Filter Include="src\Vessel\Core">
       <UniqueIdentifier>{46C62D3C-B251-9B00-BB62-1EF5276DF700}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Vessel\Debug">
+      <UniqueIdentifier>{24EAF2C1-10E3-1114-3915-F798256DF11F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Vessel\Events">
       <UniqueIdentifier>{5281DA03-BE97-D899-070F-64BB7364A921}</UniqueIdentifier>
     </Filter>
@@ -105,7 +108,7 @@
     <ClInclude Include="src\Vessel\Core\Log.h">
       <Filter>src\Vessel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vessel\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\Vessel\Core\MouseCodes.h">
       <Filter>src\Vessel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Core\Timestep.h">
@@ -113,6 +116,9 @@
     </ClInclude>
     <ClInclude Include="src\Vessel\Core\Window.h">
       <Filter>src\Vessel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Debug\Instrumentor.h">
+      <Filter>src\Vessel\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Events\ApplicationEvent.h">
       <Filter>src\Vessel\Events</Filter>
@@ -145,6 +151,9 @@
       <Filter>src\Vessel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\Renderer.h">
+      <Filter>src\Vessel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vessel\Renderer\Renderer2D.h">
       <Filter>src\Vessel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Vessel\Renderer\RendererAPI.h">
@@ -1446,6 +1455,9 @@
       <Filter>src\Vessel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Vessel\Renderer\Renderer.cpp">
+      <Filter>src\Vessel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vessel\Renderer\Renderer2D.cpp">
       <Filter>src\Vessel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Vessel\Renderer\RendererAPI.cpp">

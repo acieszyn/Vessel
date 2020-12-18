@@ -1,10 +1,10 @@
 #include "vsslpch.h"
-#include "RenderCommand.h"
+#include "Vessel/Renderer/RenderCommand.h"
 
 #include "Platform/OpenGL/OpenGLRendererAPI.h"
 
 namespace Vessel {
 
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI();
+	Scope<RendererAPI> RenderCommand::s_RendererAPI = CreateScope<OpenGLRendererAPI>();
 
 } 

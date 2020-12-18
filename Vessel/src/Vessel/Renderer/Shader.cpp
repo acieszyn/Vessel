@@ -1,10 +1,11 @@
 #include "vsslpch.h"
-#include "Shader.h"
+#include "Vessel/Renderer/Shader.h"
 
-#include "Renderer.h"
+#include "Vessel/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Vessel {
+
 	Ref<Shader> Shader::Create(const std::string& path)
 	{
 		switch (Renderer::GetAPI())

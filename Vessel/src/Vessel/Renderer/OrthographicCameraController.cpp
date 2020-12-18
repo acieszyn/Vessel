@@ -1,5 +1,5 @@
 #include "vsslpch.h"
-#include "OrthographicCameraController.h"
+#include "Vessel/Renderer/OrthographicCameraController.h"
 
 #include "Vessel/Core/Input.h"
 #include "Vessel/Core/KeyCodes.h"
@@ -13,6 +13,8 @@ namespace Vessel {
 
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		if (Input::IsKeyPressed(VSSL_KEY_A))
 			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
 		else if (Input::IsKeyPressed(VSSL_KEY_D))
@@ -40,6 +42,8 @@ namespace Vessel {
 
 	void OrthographicCameraController::OnEvent(Event& e)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<MouseScrolledEvent>(VSSL_BIND_EVENT_FN(OrthographicCameraController::OnMouseScrolled));
 		dispatcher.Dispatch<WindowResizeEvent>(VSSL_BIND_EVENT_FN(OrthographicCameraController::OnWindowResized));
@@ -47,6 +51,8 @@ namespace Vessel {
 
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		m_ZoomLevel -= e.GetYOffset() * 0.25f;
 		m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
@@ -55,6 +61,8 @@ namespace Vessel {
 
 	bool OrthographicCameraController::OnWindowResized(WindowResizeEvent& e)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		m_AspectRatio = (float)e.GetWidth() / (float)e.GetHeight();
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
 		return false;

@@ -1,11 +1,11 @@
 #include "vsslpch.h"
-#include "Application.h"
+#include "Vessel/Core/Application.h"
 
 #include "Vessel/Core/Log.h"
 
 #include "Vessel/Renderer/Renderer.h"
 
-#include "Input.h"
+#include "Vessel/Core/Input.h"
 
 #include <glfw/glfw3.h>
 
@@ -17,6 +17,8 @@ namespace Vessel {
 
 	Application::Application()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		VSSL_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -29,18 +31,33 @@ namespace Vessel {
 		PushOverlay(m_ImGuiLayer);
 	}
 
+	Application::~Application()
+	{
+		VSSL_PROFILE_FUNCTION();
+
+		Renderer::Shutdown();
+	}
+
 	void Application::PushLayer(Layer* layer)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent> (BIND_EVENT_FN(OnWindowResize));
@@ -55,22 +72,36 @@ namespace Vessel {
 
 	void Application::Run()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			VSSL_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
+				{
+					VSSL_PROFILE_SCOPE("LayerStack OnUpdate");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					VSSL_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
 			}
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
+			
 
 			m_Window->OnUpdate();
 		}
@@ -83,6 +114,8 @@ namespace Vessel {
 	}
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

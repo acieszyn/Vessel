@@ -1,5 +1,5 @@
 #include "vsslpch.h"
-#include "ImGuiLayer.h"
+#include "Vessel/ImGui/ImGuiLayer.h"
 
 #include "imgui.h"
 #include "examples/imgui_impl_glfw.h"
@@ -19,11 +19,13 @@ namespace Vessel {
 
 	void ImGuiLayer::OnAttach()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
-		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
+		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
 		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
@@ -52,6 +54,8 @@ namespace Vessel {
 
 	void ImGuiLayer::OnDetach()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -59,6 +63,8 @@ namespace Vessel {
 
 	void ImGuiLayer::Begin()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -66,6 +72,8 @@ namespace Vessel {
 
 	void ImGuiLayer::End()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());
@@ -81,12 +89,6 @@ namespace Vessel {
 			ImGui::RenderPlatformWindowsDefault();
 			glfwMakeContextCurrent(backup_current_context);
 		}
-	}
-
-	void ImGuiLayer::OnImGuiRender()
-	{
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
 	}
 
 }

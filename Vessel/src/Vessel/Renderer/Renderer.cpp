@@ -1,15 +1,26 @@
 #include "vsslpch.h"
-#include "Renderer.h"
+#include "Vessel/Renderer/Renderer.h"
+#include "Vessel/Renderer/Renderer2D.h"
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Vessel {
 
-	Renderer::SceneData* Renderer::s_SceneData = new Renderer::SceneData;
+	Scope<Renderer::SceneData> Renderer::s_SceneData = CreateScope<Renderer::SceneData>();
 
 	void Renderer::Init()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
+		Renderer2D::Init();
+	}
+
+	void Renderer::Shutdown()
+	{
+		VSSL_PROFILE_FUNCTION();
+		
+		Renderer2D::Shutdown();
 	}
 
 	void Renderer::OnWindowResize(uint32_t width, uint32_t height)

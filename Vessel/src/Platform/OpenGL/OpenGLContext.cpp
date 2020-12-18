@@ -1,5 +1,5 @@
 #include "vsslpch.h"
-#include "OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
@@ -15,6 +15,8 @@ namespace Vessel {
 
 	void OpenGLContext::Init()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		VSSL_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -27,6 +29,8 @@ namespace Vessel {
 
 	void OpenGLContext::SwapBuffers()
 	{
+		VSSL_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

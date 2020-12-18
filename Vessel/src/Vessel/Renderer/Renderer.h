@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RenderCommand.h"
+#include "Vessel/Renderer/RenderCommand.h"
 
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Vessel/Renderer/OrthographicCamera.h"
+#include "Vessel/Renderer/Shader.h"
 
 namespace Vessel {
 
@@ -11,6 +11,7 @@ namespace Vessel {
 	{
 	public:
 		static void Init();
+		static void Shutdown();
 
 		static void OnWindowResize(uint32_t width, uint32_t height);
 
@@ -26,7 +27,7 @@ namespace Vessel {
 			glm::mat4 ViewProjectionMatrix;
 		};
 
-		static SceneData* s_SceneData;
+		static Scope<SceneData> s_SceneData;
 	};
 
 }

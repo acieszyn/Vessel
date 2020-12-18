@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Vessel/Core/Core.h"
 
-#include "Window.h"
+#include "Vessel/Core/Window.h"
 #include "Vessel/Core/LayerStack.h"
 #include "Vessel/Events/Event.h"
 #include "Vessel/Events/ApplicationEvent.h"
@@ -17,7 +17,7 @@ namespace Vessel {
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 
